@@ -6,4 +6,9 @@ public class Pokemon extends AbstractPokemon{
         super(instanceId, name, weight, height, attack, defense, stamina, type);
     }
 
+    @Override
+    public String getSpecialAbility() {
+        return "Standard Pokemon ability for " + type + " type";
+    }
+
 }
