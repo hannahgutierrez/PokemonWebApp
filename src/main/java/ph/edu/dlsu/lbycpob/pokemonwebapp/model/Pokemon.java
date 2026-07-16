@@ -55,4 +55,8 @@ public class Pokemon extends AbstractPokemon{
         return type.contains("-");
     }
 
+    public String getFirstType() {
+        return type.split("-")[0];
+    }
+
 }
