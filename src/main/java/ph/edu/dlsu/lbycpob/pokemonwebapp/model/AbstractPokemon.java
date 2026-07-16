@@ -22,4 +22,7 @@ public abstract class AbstractPokemon implements PokemonOperations{
         this.type = type;
     }
 
+    // Abstract method to be implemented by subclasses
+    public abstract String getSpecialAbility();
+
 }
