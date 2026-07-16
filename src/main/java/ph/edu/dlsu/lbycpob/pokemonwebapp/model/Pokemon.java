@@ -43,4 +43,12 @@ public class Pokemon extends AbstractPokemon{
         };
     }
 
+    public String getSecondBackground() {
+        String[] types = type.split("-");
+        if (types.length < 2) {
+            return "linear-gradient(to bottom, #F0F0F0, #D0D0D0)";
+        }
+        return getTypeBackground(types[1].toUpperCase());
+    }
+
 }
