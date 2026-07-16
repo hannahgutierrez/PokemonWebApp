@@ -11,4 +11,11 @@ public class Pokemon extends AbstractPokemon{
         return "Standard Pokemon ability for " + type + " type";
     }
 
+    @Override
+    public String getTypeBackground() {
+        String[] types = type.split("-");
+        String primaryType = types[0].toUpperCase();
+        return getTypeBackground(primaryType);
+    }
+
 }
