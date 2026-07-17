@@ -18,3 +18,18 @@ public class PokemonController {
     public PokemonController(PokemonService pokemonService) {
         this.pokemonService = pokemonService;
     }
+
+    @GetMapping("/")
+    public String index(Model model) {
+        List<Pokemon> allPokemon = pokemonService.getAllPokemon();
+        model.addAttribute("allPokemon", allPokemon);
+        model.addAttribute("pokemonCount", pokemonService.getPokemonCount());
+
+        if (!model.containsAttribute("selectedPokemon")) {
+            model.addAttribute("selectedPokemon", null);
+        }
+        if (!model.containsAttribute("message")) {
+            model.addAttribute("message", null);
+        }
+        return "index";
+    }
