@@ -38,3 +38,13 @@ public class PokemonService {
                 "Magikarp,10.0kg,0.9m,0.29,0.85,0.20,Water",
                 "Gyarados,235.0kg,6.5m,1.0,0.79,0.95,Water-Flying"
         };
+        createPokemons(concatenate(csvData, sampleData));
+    }
+    private String[] concatenate(String[] array1, String[] array2) {
+        if (array1 == null) return array2 == null ? new String[0] : array2.clone();
+        if (array2 == null) return array1.clone();
+        String[] result = new String[array1.length + array2.length];
+        System.arraycopy(array1, 0, result, 0, array1.length);
+        System.arraycopy(array2, 0, result, array1.length, array2.length);
+        return result;
+    }
