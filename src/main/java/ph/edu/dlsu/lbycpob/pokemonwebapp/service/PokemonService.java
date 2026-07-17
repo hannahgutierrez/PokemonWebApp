@@ -68,3 +68,18 @@ public class PokemonService {
         return pokemonList.get(random.nextInt(pokemonList.size()));
     }
 
+    public Pokemon searchPokemon(String name) {
+        return pokemonList.stream()
+                .filter(p -> p.getName().equalsIgnoreCase(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public boolean removePokemon(String name) {
+        return pokemonList.removeIf(p -> p.getName().equalsIgnoreCase(name));
+    }
+
+    public int getPokemonCount() {
+        return pokemonList.size();
+    }
+}
