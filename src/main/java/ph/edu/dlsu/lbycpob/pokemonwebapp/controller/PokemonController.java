@@ -83,4 +83,9 @@ public class PokemonController {
         return "redirect:/";
     }
 
+    @GetMapping("/pokemon/exit")
+    public String exit() {
+        return "goodbye";
+    }
+}
 
