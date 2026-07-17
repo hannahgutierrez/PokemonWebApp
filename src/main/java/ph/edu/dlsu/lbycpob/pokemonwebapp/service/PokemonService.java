@@ -9,5 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@Service
 public class PokemonService {
-}
+    public static final String DATA_PATH = "pokemon_list.csv";
+    private final List<Pokemon> pokemonList = new ArrayList<>();
+    private final Random random = new Random();
