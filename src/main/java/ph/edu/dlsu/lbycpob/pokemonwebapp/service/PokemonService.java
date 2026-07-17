@@ -48,3 +48,14 @@ public class PokemonService {
         System.arraycopy(array2, 0, result, array1.length, array2.length);
         return result;
     }
+
+    private void createPokemons(String[] lines) {
+        for (String line : lines) {
+            try {
+                pokemonList.add(PokemonFactory.createPokemonFromCSV(line));
+            } catch (Exception e) {
+                System.err.println("Error parsing Pokemon data: " + line);
+            }
+        }
+    }
+
