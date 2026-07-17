@@ -10,5 +10,11 @@ import ph.edu.dlsu.lbycpob.pokemonwebapp.model.Pokemon;
 import ph.edu.dlsu.lbycpob.pokemonwebapp.service.PokemonService;
 import java.util.List;
 
+@Controller
 public class PokemonController {
-}
+
+    private final PokemonService pokemonService;
+
+    public PokemonController(PokemonService pokemonService) {
+        this.pokemonService = pokemonService;
+    }
