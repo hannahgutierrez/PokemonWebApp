@@ -59,3 +59,12 @@ public class PokemonService {
         }
     }
 
+    public List<Pokemon> getAllPokemon() {
+        return new ArrayList<>(pokemonList);
+    }
+
+    public Pokemon getRandomPokemon() {
+        if (pokemonList.isEmpty()) return null;
+        return pokemonList.get(random.nextInt(pokemonList.size()));
+    }
+
